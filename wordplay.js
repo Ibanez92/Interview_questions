@@ -106,12 +106,12 @@ function problem10(scrabArr) {
   for (let i = 0; i < scrabArr.length; i++) {
     let current_vowel_index = 0;
     for (let j = 0; j < scrabArr[i].length; j++) {
-        if(scrabArr[i][j] === vowels[current_vowel_index]) {
-            current_vowel_index++
-        }
-        if(current_vowel_index === vowels.length) {
-           console.log("This is a match! " + scrabArr[i])
-        }
+      if (scrabArr[i][j] === vowels[current_vowel_index]) {
+        current_vowel_index++;
+      }
+      if (current_vowel_index === vowels.length) {
+        console.log("This is a match! " + scrabArr[i]);
+      }
     }
   }
 }
@@ -119,29 +119,142 @@ function problem10(scrabArr) {
 
 // How many words contain the substring "TYPE”?
 function problem11(scrabArr) {
-    let count = 0
-    for (let i = 0; i < scrabArr.length; i++) {
-        if(scrabArr[i].includes("TYPE")) {
-            count++ 
-        }
+  let count = 0;
+  for (let i = 0; i < scrabArr.length; i++) {
+    if (scrabArr[i].includes("TYPE")) {
+      count++;
     }
-    console.log(count);
+  }
+  console.log(count);
 }
 // Create and print an array containing all of the words that end in "GHTLY"
 function problem12(scrabArr) {
-    let results = []
-    for (let i = 0; i < scrabArr.length; i++) {
-        if(scrabArr[i].endsWith("GHTLY")) {
-            results.push(scrabArr[i])
-        }
+  let results = [];
+  for (let i = 0; i < scrabArr.length; i++) {
+    if (scrabArr[i].endsWith("GHTLY")) {
+      results.push(scrabArr[i]);
     }
-    return results
+  }
+  return results;
 }
 // What is the shortest word that contains all 5 vowels?
+function problem13(scrabArr) {
+  let shortestWord = null;
+  for (let i = 0; i < scrabArr.length; i++) {
+    if (
+      scrabArr[i].includes("A") &&
+      scrabArr[i].includes("E") &&
+      scrabArr[i].includes("I") &&
+      scrabArr[i].includes("O") &&
+      scrabArr[i].includes("U")
+    ) {
+      if (shortestWord === null || scrabArr[i].length < shortestWord.length) {
+        shortestWord = scrabArr[i];
+      }
+    }
+  }
+  console.log(shortestWord);
+}
 // What is the longest word that contains no vowels?
+function problem14() {
+  let longestWord = null;
+  for (let i = 0; i < scrabArr.length; i++) {
+    if (
+      !scrabArr[i].includes("A") &&
+      !scrabArr[i].includes("E") &&
+      !scrabArr[i].includes("I") &&
+      !scrabArr[i].includes("O") &&
+      !scrabArr[i].includes("U")
+    ) {
+      if (longestWord === null || longestWord.length > scrabArr[i].length) {
+        longestWord = scrabArr[i];
+      }
+    }
+  }
+  console.log(longestWord);
+}
 // Which of the letters Q, X, and Z is the least common?
+function problem15(scrabArr) {
+  // Set up a dictionary with q, x, and z as the keys, and set the count as the value
+  let letterDictionary = {
+    Q: 0,
+    X: 0,
+    Z: 0,
+  };
+
+  let letterCount = function (letter, word) {
+    if (word.includes(letter)) {
+      //
+      letterDictionary[letter] += word.split("").filter((element) => {
+        return element === letter;
+      }).length;
+    }
+  };
+
+  // Loop through the scrabble words
+  for (let i = 0; i < scrabArr.length; i++) {
+    letterCount("Q", scrabArr[i]);
+    letterCount("X", scrabArr[i]);
+    letterCount("Z", scrabArr[i]);
+  }
+  // set result variables for the lowest letter count and for the lowest letter key
+  let lowestLetterCount = null;
+  let lowestLetterKey = null;
+  // now we need to loop through our dictionary and find the property with the lowest value
+  for (const key in letterDictionary) {
+    // if the lowest letter count variable is set to to null or if the letter dictionary key is less than the lowest letter count varaible run the statement
+    if (
+      lowestLetterCount === null ||
+      letterDictionary[key] < lowestLetterCount
+    ) {
+      // set the lowest letter count to the letter dictionary value
+      lowestLetterCount = letterDictionary[key];
+      lowestLetterKey = key;
+    }
+  }
+  console.log(letterDictionary);
+  console.log(lowestLetterKey + ": " + lowestLetterCount);
+}
 // What is the longest palindrome?
+function problem16(scrabArr) {
+  // set result variable for the longest palindrome to null so we can insert the result later when the conditions are met
+  let longestPalindrome = null;
+  // loop through the scrabble words array
+  for (const word of scrabArr) {
+    // if the scrabble word we're looking at is equal to the word after we split into an array, reverse the elements and join the elements into a string
+    if(word === word.split("").reverse().join("")) {
+      // if the longest plaindrome variable is equal to null or if the length of the longest palindrome is less than the scrabble word length we're currently looking at
+      if(longestPalindrome === null || longestPalindrome.length < word.length) {
+        // set the longest palindrome variable to the current scrabble word
+        longestPalindrome = word
+      }
+    }
+  }
+  console.log(longestPalindrome);
+}
+
 // What are all of the letters that never appear consecutively in an English word? For example, we know that “U” isn’t an answer, because of the word VACUUM, and we know that “A” isn’t an answer, because of “AARDVARK”, but which letters never appear consecutively?
+function problem17(scrabArr) {
+  // find the letters that dont appear consecutively in any word 
+
+  // list of letters to cross off when they appear consecutively
+  const letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+
+  // use the for of loop to go through every word 
+  for(const word of scrabArr) {
+    let previousLetter = null
+    // check if any letter appears consecutively 
+    for(const letter of word) {
+      console.log(previousLetter, letter);
+      // check for when the letter in the current word has a repeating letter next to it
+      if(previousLetter === letter) {
+        // remove letter from list 
+      }
+      previousLetter = letter
+    }
+  }
+  // print the list
+}
 
 // problem1(scrabArr);
 // problem2(scrabArr)
@@ -154,6 +267,11 @@ function problem12(scrabArr) {
 // problem9(scrabArr)
 // problem10(scrabArr)
 // problem11(scrabArr)
-console.log(problem12(scrabArr))
+// console.log(problem12(scrabArr))
+// problem13(scrabArr)
+// problem14(scrabArr)
+// problem15(scrabArr);
+// problem16(scrabArr);
+problem17(["VACUUM"]);
 
 
