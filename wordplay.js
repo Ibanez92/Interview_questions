@@ -103,14 +103,29 @@ function problem9(scrabArr) {
 function problem10(scrabArr) {
   let vowels = ["A", "E", "I", "O", "U"];
 
+  const letterVowel = function(letter) {
+    let notVowel = null
+    if(letter.includes("A") || letter.includes("E") || letter.includes("I") || letter.includes("O") || letter.includes("U")) {
+      return letter
+    }
+    return notVowel
+  }
+
   for (let i = 0; i < scrabArr.length; i++) {
     let current_vowel_index = 0;
     for (let j = 0; j < scrabArr[i].length; j++) {
       if (scrabArr[i][j] === vowels[current_vowel_index]) {
         current_vowel_index++;
+      } else {
+        // if we hit another vowel other than the one thats next in our vowels array, we need to break out of that loop
+        if (letterVowel(scrabArr[i][j]) === null) {
+          
+        }
       }
-      if (current_vowel_index === vowels.length) {
-        console.log("This is a match! " + scrabArr[i]);
+      if (vowels.length === current_vowel_index) {
+        console.log(
+          "The word " + scrabArr[i] + " has all 5 vowels in alphabetical order"
+        );
       }
     }
   }
@@ -148,7 +163,7 @@ function problem13(scrabArr) {
       scrabArr[i].includes("O") &&
       scrabArr[i].includes("U")
     ) {
-      if (shortestWord === null || scrabArr[i].length < shortestWord.length) {
+      if (shortestWord === null || shortestWord.length > scrabArr[i].length) {
         shortestWord = scrabArr[i];
       }
     }
@@ -182,11 +197,15 @@ function problem15(scrabArr) {
     Z: 0,
   };
 
+  // create function to repeat code for q, x, z counters
   let letterCount = function (letter, word) {
+    // if the letter is included in the word, run the following statement
     if (word.includes(letter)) {
-      //
+      // using the addition assisngment add the number count to the letter we're looking at in the letter dictionary by taking the word, splitting it into an array, and filtering the element
       letterDictionary[letter] += word.split("").filter((element) => {
+        // return the element that equals the letter
         return element === letter;
+        // add the .length to the end of the filter method to count how letters we matched
       }).length;
     }
   };
@@ -222,11 +241,14 @@ function problem16(scrabArr) {
   // loop through the scrabble words array
   for (const word of scrabArr) {
     // if the scrabble word we're looking at is equal to the word after we split into an array, reverse the elements and join the elements into a string
-    if(word === word.split("").reverse().join("")) {
+    if (word === word.split("").reverse().join("")) {
       // if the longest plaindrome variable is equal to null or if the length of the longest palindrome is less than the scrabble word length we're currently looking at
-      if(longestPalindrome === null || longestPalindrome.length < word.length) {
+      if (
+        longestPalindrome === null ||
+        longestPalindrome.length < word.length
+      ) {
         // set the longest palindrome variable to the current scrabble word
-        longestPalindrome = word
+        longestPalindrome = word;
       }
     }
   }
@@ -235,22 +257,49 @@ function problem16(scrabArr) {
 
 // What are all of the letters that never appear consecutively in an English word? For example, we know that “U” isn’t an answer, because of the word VACUUM, and we know that “A” isn’t an answer, because of “AARDVARK”, but which letters never appear consecutively?
 function problem17(scrabArr) {
-  // find the letters that dont appear consecutively in any word 
+  // find the letters that dont appear consecutively in any word
 
   // list of letters to cross off when they appear consecutively
-  const letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+  const letters = [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G",
+    "H",
+    "I",
+    "J",
+    "K",
+    "L",
+    "M",
+    "N",
+    "O",
+    "P",
+    "Q",
+    "R",
+    "S",
+    "T",
+    "U",
+    "V",
+    "W",
+    "X",
+    "Y",
+    "Z",
+  ];
 
-  // use the for of loop to go through every word 
-  for(const word of scrabArr) {
-    let previousLetter = null
-    // check if any letter appears consecutively 
-    for(const letter of word) {
+  // use the for of loop to go through every word
+  for (const word of scrabArr) {
+    let previousLetter = null;
+    // check if any letter appears consecutively
+    for (const letter of word) {
       console.log(previousLetter, letter);
       // check for when the letter in the current word has a repeating letter next to it
-      if(previousLetter === letter) {
-        // remove letter from list 
+      if (previousLetter === letter) {
+        // remove letter from list
       }
-      previousLetter = letter
+      previousLetter = letter;
     }
   }
   // print the list
@@ -265,13 +314,11 @@ function problem17(scrabArr) {
 // problem7(scrabArr)
 // problem8(scrabArr)
 // problem9(scrabArr)
-// problem10(scrabArr)
+problem10(scrabArr);
 // problem11(scrabArr)
 // console.log(problem12(scrabArr))
 // problem13(scrabArr)
 // problem14(scrabArr)
 // problem15(scrabArr);
 // problem16(scrabArr);
-problem17(["VACUUM"]);
-
-
+// problem17(["VACUUM"]);
