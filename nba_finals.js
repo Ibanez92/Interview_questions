@@ -14,8 +14,10 @@ for (let i = 0; i < nbaArr.length; i++) {
     var seriesScore = yearlyData[3]
     var mvp = yearlyData[4].trim()
 
+    // problem 1
     yearWonTeamWon[yearWon] = teamWon
 
+    // problem 2
     if(teamWonYearWon[teamWon] === undefined) {
         teamWonYearWon[teamWon] = []
     }
@@ -39,8 +41,11 @@ function problem2(team) {
 
 // Write a function that takes as an argument a team name and returns the first year the team won the NBA finals.
 function problem3(teamName) {
-    // console.log(teamWonYearWon[teamName]);
+    // console.log(teamWonYearWon);
     return Math.min(...teamWonYearWon[teamName])
+    // for(const yearArr of Object.values(teamWonYearWon)) {
+    //     return yearArr
+    // }
 }
 
 // Which teams have made it to the NBA finals but have never won?
@@ -53,4 +58,4 @@ function problem3(teamName) {
 
 console.log(problem1(1955))
 console.log(problem2("Boston Celtics"))
-console.log(problem3("Los Angeles Lakers"));
+console.log(problem3("Boston Celtics"));

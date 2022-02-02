@@ -314,11 +314,11 @@ function problem17(scrabArr) {
 // problem7(scrabArr)
 // problem8(scrabArr)
 // problem9(scrabArr)
-problem10(scrabArr);
+// problem10(scrabArr);
 // problem11(scrabArr)
 // console.log(problem12(scrabArr))
 // problem13(scrabArr)
 // problem14(scrabArr)
 // problem15(scrabArr);
 // problem16(scrabArr);
-// problem17(["VACUUM"]);
+problem17(["VACUUM"]);
