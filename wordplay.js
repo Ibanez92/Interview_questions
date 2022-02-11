@@ -99,17 +99,28 @@ function problem9(scrabArr) {
     }
   }
 }
+
+
+
 // What are all of the words that have all 5 vowels, in alphabetical order?
 function problem10(scrabArr) {
   let vowels = ["A", "E", "I", "O", "U"];
 
-  const letterVowel = function(letter) {
-    let notVowel = null
-    if(letter.includes("A") || letter.includes("E") || letter.includes("I") || letter.includes("O") || letter.includes("U")) {
-      return letter
+  const letterVowel = function (letter) {
+    let notVowel = null;
+    if (
+      letter.includes("A") ||
+      letter.includes("E") ||
+      letter.includes("I") ||
+      letter.includes("O") ||
+      letter.includes("U")
+    ) {
+      return letter;
     }
-    return notVowel
-  }
+    return notVowel;
+  };
+// abstemious
+
 
   for (let i = 0; i < scrabArr.length; i++) {
     let current_vowel_index = 0;
@@ -118,19 +129,24 @@ function problem10(scrabArr) {
         current_vowel_index++;
       } else {
         // if we hit another vowel other than the one thats next in our vowels array, we need to break out of that loop
-        if (letterVowel(scrabArr[i][j]) === null) {
-          
+        if (letterVowel(scrabArr[i][j]) !== vowels[current_vowel_index] && letterVowel(scrabArr[i][j]) !== null) {
+          break
         }
       }
       if (vowels.length === current_vowel_index) {
         console.log(
           "The word " + scrabArr[i] + " has all 5 vowels in alphabetical order"
         );
+        break
       }
     }
   }
 }
-// Setting up storage to use during a for loop, including counters and arrays
+
+
+
+
+
 
 // How many words contain the substring "TYPE”?
 function problem11(scrabArr) {
@@ -294,15 +310,17 @@ function problem17(scrabArr) {
     let previousLetter = null;
     // check if any letter appears consecutively
     for (const letter of word) {
-      console.log(previousLetter, letter);
-      // check for when the letter in the current word has a repeating letter next to it
-      if (previousLetter === letter) {
+      if (previousLetter === letter && letters.includes(letter)) {
         // remove letter from list
+        letters.splice(letters.indexOf(letter), 1);
+
+        // console.log(previousLetter, letter);
       }
       previousLetter = letter;
     }
   }
   // print the list
+  console.log(letters);
 }
 
 // problem1(scrabArr);
@@ -314,11 +332,11 @@ function problem17(scrabArr) {
 // problem7(scrabArr)
 // problem8(scrabArr)
 // problem9(scrabArr)
-// problem10(scrabArr);
+problem10(["ABSTEMIOUS"]);
 // problem11(scrabArr)
 // console.log(problem12(scrabArr))
 // problem13(scrabArr)
 // problem14(scrabArr)
 // problem15(scrabArr);
 // problem16(scrabArr);
-problem17(["VACUUM"]);
+// problem17(scrabArr);
