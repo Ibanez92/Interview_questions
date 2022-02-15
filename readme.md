@@ -1,5 +1,4 @@
-
-<!-- Programming practice problems
+Programming practice problems
 Please save each solution in its own file, in a practice problems folder.
 
 Wordplay
@@ -386,4 +385,4 @@ Example 3:
 | `pattern: 'abba'`          |
 | -------------------------- |
 | `Input: 'redbluegreenred'` |
-| `result: False`            | -->
+| `result: False`            |
