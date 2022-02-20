@@ -1,7 +1,7 @@
 {
   "name": "interview_questions",
   "version": "1.0.0",
-  "description": "Please save each solution in its own file, in a practice problems folder.",
+  "description": "Programming practice problems\r Please save each solution in its own file, in a practice problems folder.",
   "main": "babynames.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/Ibanez92/Interview_questions#readme",
   "dependencies": {
-    "csv": "^6.0.5"
+    "csv": "^6.0.5",
+    "csv-parser": "^3.0.0"
   }
 }
