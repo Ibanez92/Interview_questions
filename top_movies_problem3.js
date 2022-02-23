@@ -6,30 +6,37 @@ const records = parse(topMovieCsv, {
   columns: true,
   skip_empty_lines: true,
 });
+// console.log(records);
 
 // What distributor has the most films on this list?
 function distributorMostFilms(movies) {
-    let distributorCounterDictionary = {
-      'DreamWorks': 0,
-      'Lionsgate': 0,
-      'New Line Cinema': 0,
-      'Paramount Pictures': 0,
-      'Summit Entertainment': 0,
-      'Sony Pictures Entertainment (SPE)': 0,
-      'Twentieth Century Fox': 0,
-      'Warner Bros.': 0,
-      'Walt Disney Studios Motion Pictures': 0,
-    }
+  const distributorCountDict = {};
 
-    for (let i = 0; i < movies.length; i++) {
-      let movieDistributor = movies[i]['Distributor']  
-      if(distributorCounterDictionary[movieDistributor] === movieDistributor) {
-        distributorCounterDictionary[movieDistributor] += 1
-      }
+  for (const movie of movies) {
+    const movieDistributor = movie["Distributor"];
+
+    if (distributorCountDict[movieDistributor] === undefined) {
+      distributorCountDict[movieDistributor] = 0;
     }
-    
-    return distributorCounterDictionary
+    distributorCountDict[movieDistributor] += 1;
+  }
+
+  let mostFilmsDist = null;
+  let distributorValue = null;
+  for (const key in distributorCountDict) {
+    if (
+      distributorValue === null ||
+      distributorCountDict[key] > distributorValue
+    ) {
+      distributorValue = distributorCountDict[key];
+      mostFilmsDist = key;
+    }
+  }
+  return distributorValue + " " + mostFilmsDist;
+  // loop through the distributor dictionary
 }
+
+function getHighestDistributorCount() {}
 
 console.log(distributorMostFilms(records));
 
