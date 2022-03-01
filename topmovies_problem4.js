@@ -18,23 +18,24 @@ const movies = parse(topMovieCsv, {
 
 function lowYearAndFilms(movies) {
   // create an empty dictionary
-  let lowYearAndFilmsDict = {
+  const lowYearAndFilmsDict = {
       films: [],
       year: movies[0]['Release Date']
   }
-  // assign an empty value for the variable release date(ex. let release date = null)
   // loop through the array of movies
   for (let i = 0; i < movies.length; i++) {
-    // assign the first value of the movies release date property to the empty variable release date
     
     // if its not the same index in the array and the release date value is less than the current value
     if(i !== 0 && movies[i]['Release Date'] < lowYearAndFilmsDict.year){
-        // reassign that current release date value to the release date variable
+        // assign the year key to the new lowest release date value
         lowYearAndFilmsDict.year = movies[i]['Release Date']
+        // assign the films key to the empty array value when new lowest release date year found
         lowYearAndFilmsDict.films = []
 
     }
+    // if the release date value is equal to the current lowest year in the dictionary
     if(movies[i]['Release Date'] === lowYearAndFilmsDict.year){
+      // push the title of the film to the films property value array
         lowYearAndFilmsDict.films.push(movies[i]['Title'])
     }
 
