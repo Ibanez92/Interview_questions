@@ -62,7 +62,7 @@ function findMatch2(string) {
   return matchedWords;
 }
 
-// console.log(findMatch2("ABCD"));
+console.log(findMatch2("ABCD"));
 
 function findMatch3(string) {
   const allowedLetters = string.split("");
@@ -126,4 +126,4 @@ function findMatch5(string) {
   return matchedWords;
 }
 
-console.log(findMatch5("ABCD"));
+// console.log(findMatch5("ABCD"));
