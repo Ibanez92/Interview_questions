@@ -26,6 +26,8 @@ function wordsMadeFromLetters(string) {
           matchedWords.push(currentWord);
         }
         continue;
+      } else {
+        break
       }
     }
   }
