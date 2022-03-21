@@ -69,10 +69,30 @@ function findMatch2(availableLetters) {
 }
 // console.log(findMatch2("ABCD"));
 
+// words that only have 1 vowel in them
 
 // input: scrabble words array
 // output: ["ART", "BAT", "CAT"]
 function oneVowelWords(scrabArr){
+    const results = []
+    for (let i = 0; i < scrabArr.length; i++) {
+        if(scrabArr[i].includes("A") && !scrabArr[i].includes("E") && !scrabArr[i].includes("I")  && !scrabArr[i].includes("O")  && !scrabArr[i].includes("U")){
+            results.push(scrabArr[i])
+        }
+        else if(scrabArr[i].includes("E") && !scrabArr[i].includes("A") && !scrabArr[i].includes("I")  && !scrabArr[i].includes("O")  && !scrabArr[i].includes("U")){
+            results.push(scrabArr[i])
+        }
+        else if(scrabArr[i].includes("I") && !scrabArr[i].includes("E") && !scrabArr[i].includes("A")  && !scrabArr[i].includes("O")  && !scrabArr[i].includes("U")){
+            results.push(scrabArr[i])
+        }
+        else if(scrabArr[i].includes("O") && !scrabArr[i].includes("E") && !scrabArr[i].includes("I")  && !scrabArr[i].includes("A")  && !scrabArr[i].includes("U")){
+            results.push(scrabArr[i])
+        }
+        else if(scrabArr[i].includes("U") && !scrabArr[i].includes("E") && !scrabArr[i].includes("I")  && !scrabArr[i].includes("O")  && !scrabArr[i].includes("A")){
+            results.push(scrabArr[i])
+        }
+    }
     
+    return results
 }
 console.log(oneVowelWords(scrabArr));
