@@ -100,8 +100,6 @@ function problem9(scrabArr) {
   }
 }
 
-
-
 // What are all of the words that have all 5 vowels, in alphabetical order?
 function problem10(scrabArr) {
   let vowels = ["A", "E", "I", "O", "U"];
@@ -119,8 +117,7 @@ function problem10(scrabArr) {
     }
     return notVowel;
   };
-// abstemious
-
+  // abstemious
 
   for (let i = 0; i < scrabArr.length; i++) {
     let current_vowel_index = 0;
@@ -129,24 +126,22 @@ function problem10(scrabArr) {
         current_vowel_index++;
       } else {
         // if we hit another vowel other than the one thats next in our vowels array, we need to break out of that loop
-        if (letterVowel(scrabArr[i][j]) !== vowels[current_vowel_index] && letterVowel(scrabArr[i][j]) !== null) {
-          break
+        if (
+          letterVowel(scrabArr[i][j]) !== vowels[current_vowel_index] &&
+          letterVowel(scrabArr[i][j]) !== null
+        ) {
+          break;
         }
       }
       if (vowels.length === current_vowel_index) {
         console.log(
           "The word " + scrabArr[i] + " has all 5 vowels in alphabetical order"
         );
-        break
+        break;
       }
     }
   }
 }
-
-
-
-
-
 
 // How many words contain the substring "TYPE”?
 function problem11(scrabArr) {

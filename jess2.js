@@ -95,4 +95,37 @@ function oneVowelWords(scrabArr){
     
     return results
 }
-console.log(oneVowelWords(scrabArr));
+// console.log(oneVowelWords(scrabArr));
+
+
+
+
+
+function oneVowelWords2(scrabArr){
+    const vowels = ["A","E","I","O","U"]
+    const results = []
+    scrabArr.forEach( word => {
+        vowels.forEach( vowel => {
+           if(helperFn(word, vowel)) return results.push(word)
+        });
+    });
+       
+    return results
+}
+
+function helperFn(word, vowelLetter){
+    const vowels = ["A","E","I","O","U"]
+    vowels.splice((vowels.indexOf(vowelLetter)), 1)
+
+    vowels.forEach(vowel => {
+        if(word.includes(vowel)){
+            return false
+        }
+    });
+    
+    if(word.includes(vowelLetter)){
+        return true
+    }
+}
+
+console.log(oneVowelWords2(scrabArr));
