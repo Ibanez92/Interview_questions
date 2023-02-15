@@ -1,5 +1,6 @@
-Programming practice problems
-Please save each solution in its own file, in a practice problems folder.
+#Programming practice problems
+
+I saved each solution in its own file.
 
 Wordplay
 
