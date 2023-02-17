@@ -1,8 +1,6 @@
-#Programming practice problems
+# Programming practice problems by Jessica Mckellar
 
-I saved each solution in its own file.
-
-Wordplay
+## Wordplay
 
 A file containing all valid Scrabble words, one word per line:
 
