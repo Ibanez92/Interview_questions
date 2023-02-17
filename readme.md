@@ -46,6 +46,8 @@ Setting up storage to use during a for loop, including counters and arrays
 
 [ ] What are all of the letters that never appear consecutively in an English word? For example, we know that “U” isn’t an answer, because of the word VACUUM, and we know that “A” isn’t an answer, because of “AARDVARK”, but which letters never appear consecutively?
 
+___
+
 Countries
 
 A file containing all of the countries in the United Nations, one country per line:
@@ -69,6 +71,9 @@ Setting up storage to use during a for loop, including counters and arrays
 [ ] What countries use only one vowel in their name (the vowel can be used multiple times) - For example, if the word “BEEKEEPER” were a country, it would be an answer, because it only uses “E”.
 
 [ ] There is at least one country name that contains another country name. Find all of these cases.
+
+___
+
 Baby names
 
 A file containing the top 40 baby names for boys in 2020:
