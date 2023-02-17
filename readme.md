@@ -2,9 +2,11 @@
 
 ## Wordplay
 
-A file containing all valid Scrabble words, one word per line:
+***Below is a file containing all valid Scrabble words, one word per line:***
 
 https://www.dropbox.com/s/qkg62nkh483g635/sowpods.txt?dl=0
+
+____ 
 
 For loops and if conditions
 
