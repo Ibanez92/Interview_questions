@@ -8,7 +8,7 @@ https://www.dropbox.com/s/qkg62nkh483g635/sowpods.txt?dl=0
 
 ____ 
 
-For loops and if conditions
+**For loops and if conditions**
 
 [ ] What are all of the words containing UU?
 
@@ -30,7 +30,7 @@ For loops and if conditions
 
 [ ] What are all of the words that have all 5 vowels, in alphabetical order?
 
-Setting up storage to use during a for loop, including counters and arrays
+**Setting up storage to use during a for loop, including counters and arrays**
 
 [ ] How many words contain the substring "TYPE”?
 
@@ -48,15 +48,15 @@ Setting up storage to use during a for loop, including counters and arrays
 
 ___
 
-Countries
+## Countries
 
-A file containing all of the countries in the United Nations, one country per line:
-
-https://www.dropbox.com/s/k6xcq55tqanbdmz/countries.txt?dl=0
+***A file containing all of the countries in the United Nations, one country per line:***
 
 https://www.dropbox.com/s/k6xcq55tqanbdmz/countries.txt?dl=0
 
-For loops and if conditions
+https://www.dropbox.com/s/k6xcq55tqanbdmz/countries.txt?dl=0
+
+**For loops and if conditions**
 
 [ ] What are all of the countries that have “United” in the name?
 
@@ -64,7 +64,7 @@ For loops and if conditions
 
 [ ] What country names are > 50% vowels?
 
-Setting up storage to use during a for loop, including counters and arrays
+**Setting up storage to use during a for loop, including counters and arrays**
 
 [ ] What is the shortest country name? Make sure your solution can handle ties.
 
@@ -74,23 +74,23 @@ Setting up storage to use during a for loop, including counters and arrays
 
 ___
 
-Baby names
+## Baby names
 
-A file containing the top 40 baby names for boys in 2020:
+***A file containing the top 40 baby names for boys in 2020:***
 
 https://www.dropbox.com/s/drpcy1yrsq4uadk/baby_names_2020_short.txt?dl=0
 
-A file containing the top 40 baby names for boys in 1880:
+***A file containing the top 40 baby names for boys in 1880:***
 
 https://www.dropbox.com/s/fvdi7jl280lqp8c/baby_names_1880_short.txt?dl=0
 
-More for loops, if conditions, and storage
+**More for loops, if conditions, and storage**
 
 [ ] What is the shortest baby name in the top 40 baby names for 2020?
 
 [ ] What are the longest baby names in the top 40 baby names for 2020? Make sure you can handle if there’s a tie.
 
-Nested for loops
+**Nested for loops**
 
 [ ] There is at least one baby name from the top 40 baby names for 2020 that, when spelled backwards, is a valid Scrabble word. Find and print all such names.
 
@@ -98,17 +98,19 @@ Nested for loops
 
 [ ] What are all of the names that were top 40 baby names in both 1880 and 2020?
 
-NBA Finals
+___
 
-A CSV containing NBA finals data for every year:
+## NBA Finals
+
+***A CSV containing NBA finals data for every year:***
 
 https://www.dropbox.com/s/8dx99bjfwh9eh38/nba_finals.csv?dl=0
 
 https://www.dropbox.com/s/8dx99bjfwh9eh38/nba_finals.csv?dl=0
 
-Dictionaries
+**Dictionaries**
 
-Read the NBA finals CSV data into one more more dictionaries as needed to complete the following:
+**Read the NBA finals CSV data into one more more dictionaries as needed to complete the following:**
 
 [ ] Write a function that takes as an argument a year and returns the winner of the NBA finals that year.
 
@@ -118,15 +120,17 @@ Read the NBA finals CSV data into one more more dictionaries as needed to comple
 
 [ ] Print out a ranking of who has won the MVP more than once, by times one, e.g. this output: - 6 times: Michael Jordan - 3 times: Shaquille O'Neal, LeBron James - 2 times: <etc>
 
-Top Movies
+___
 
-Data on the top 1000 grossing movies:
+## Top Movies
+
+***Data on the top 1000 grossing movies:***
 
 https://www.dropbox.com/s/qfx0dx0ijzrey5t/top_movies.csv?dl=0
 
 https://www.dropbox.com/s/qfx0dx0ijzrey5t/top_movies.csv?dl=0
 
-This is a CSV that we recommend parsing with a CSV parsing library (versus parsing it yourself).
+***This is a CSV that we recommend parsing with a CSV parsing library (versus parsing it yourself).***
 
 Questions
 
@@ -136,9 +140,11 @@ Questions
 - What is the earliest year on this list, and what were the films from that year?
 - What is the distribution of ratings? (How many are PG, PG-13, R, etc.?)
 
-Billboard Hot 100 of 2000
+___
 
-A CSV containing the Billboard Hot 100 data for every week of 2000:
+## Billboard Hot 100 of 2000
+
+***A CSV containing the Billboard Hot 100 data for every week of 2000:***
 
 https://www.dropbox.com/s/v56vasmua65qjgy/billboard100_2000.csv?dl=0
 
@@ -153,14 +159,16 @@ These were the number one songs of 2000:
 "Smooth" - Santana Featuring Rob Thomas
 "Independent Women Part I" - Destiny's Child
 
-…
-
 [ ] What song was the #1 song for the most weeks of 2000, who was the artist, and how many weeks was it at #1?
 
 [ ] What artist had the most songs chart in 2000, and what were those songs?
 
 [ ] What song(s) were on the charts (anywhere on the charts) for the most weeks of 2000?
 Interview question: postfix notation calculator
+
+___
+
+## Let’s build a basic postfix notation calculator.
 
 Most of us learn how to do math with operators in between numbers. For example:
 
@@ -169,8 +177,6 @@ Most of us learn how to do math with operators in between numbers. For example:
 You have an operator like `+ - * /`, and numbers (“operands”) on each side of the operator, and you apply the operator to those operands. If you have multiple expressions, you resolve them according to some order of operations (or forcing the order using parenthesis). This way of doing math uses infix notation — the operators are in between the operands.
 
 There’s another way of doing math that uses postfix notation — the operators come after the operands. This is a cool way of doing math — you don’t need parenthesis or rules to describe the order of operations, so it’s easier to parse a math expression, and you can use a stack to manage the calculation (using the stack data structure in the real world!).
-
-Let’s build a basic postfix notation calculator.
 
 What to implement
 
@@ -238,7 +244,10 @@ Extend the script to handle blank tiles. When reading the input, the character \
 
 Wildcards do not count towards a word's score.
 
-Interview question: rot solver
+___
+
+## Interview question: rot solver
+
 Part I
 
 (If you’ve heard of a rot13 letter substitution cipher, this question is a generalization of that cipher)
@@ -273,7 +282,9 @@ Sample inputs and outputs:
 
     decrypt("Ju xbt uif cftu pg ujnft, ju xbt uif xpstu pg ujnft") -> ("It was the best of times, it was the worst of times", 1)
 
-Interview question: Boggle solver
+___
+
+## Interview question: Boggle solver
 
 This is a retired coding question from Dropbox. I don’t know how often candidates would actually solve this completely during a 60-minute interview, so instead I’m going to break this into a couple of pieces with expectations for each.
 
